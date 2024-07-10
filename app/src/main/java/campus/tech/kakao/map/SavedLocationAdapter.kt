@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import campus.tech.kakao.map.SavedLocationAdapter.SavedLocationHolder
 
 class SavedLocationAdapter(
-        private val itemSelectedListener: onItemSelected
+        private val itemSelectedListener: OnItemSelectedListener
 ) : ListAdapter<SavedLocation, SavedLocationHolder>(
     object: DiffUtil.ItemCallback<SavedLocation>() {
         override fun areItemsTheSame(oldItem: SavedLocation, newItem: SavedLocation): Boolean {
@@ -23,7 +23,7 @@ class SavedLocationAdapter(
     }) {
     inner class SavedLocationHolder(
         itemView:View,
-        itemSelectedListener: onItemSelected
+        itemSelectedListener: OnItemSelectedListener
     ) : RecyclerView.ViewHolder(itemView) {
         val savedLocationXButton: ImageView = itemView.findViewById(R.id.savedLocationXButton)
         val savedLocationTextView: TextView = itemView.findViewById(R.id.savedLocationTextView)

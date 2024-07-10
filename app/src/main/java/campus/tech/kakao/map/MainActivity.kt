@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import campus.tech.kakao.map.ViewModelFactory.LocationViewModelFactory
 import campus.tech.kakao.map.ViewModelFactory.SavedLocationViewModelFactory
 
-class MainActivity : AppCompatActivity(), onItemSelected {
+class MainActivity : AppCompatActivity(), OnItemSelectedListener {
 
     private lateinit var locationViewModel: LocationViewModel
     private lateinit var locationAdapter: LocationAdapter
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity(), onItemSelected {
         setContentView(R.layout.activity_main)
 
         initViews()
-        locationViewModel.insertLocation() // 앱 설치 시 최초 1번만 실행하게 하려면 어떻게 해야할까?
+        locationViewModel.insertLocation()
 
         setupSearchEditText()
         setupClearButton()

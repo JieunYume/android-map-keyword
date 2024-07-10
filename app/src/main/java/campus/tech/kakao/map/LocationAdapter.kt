@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import campus.tech.kakao.map.LocationAdapter.LocationHolder
 
 class LocationAdapter(
-    private val itemSelectedListener: onItemSelected
+    private val itemSelectedListener: OnItemSelectedListener
 ) : ListAdapter<Location, LocationHolder>(
     object : DiffUtil.ItemCallback<Location>() {
         override fun areItemsTheSame(oldItem: Location, newItem: Location): Boolean {
@@ -22,7 +22,7 @@ class LocationAdapter(
     }) {
     inner class LocationHolder(
         itemView: View,
-        itemSelectedListener: onItemSelected
+        itemSelectedListener: OnItemSelectedListener
     ) : RecyclerView.ViewHolder(itemView) {
         val titleTextView: TextView = itemView.findViewById(R.id.titleTextView)
         val addressTextView: TextView = itemView.findViewById(R.id.addressTextView)
